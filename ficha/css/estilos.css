@@ -1,0 +1,478 @@
+       .olControlPanel div { 
+          display:block;
+          width:  24px;
+          height: 24px;
+          margin: 5px;
+          background-color:red;
+          position:relative;
+          left: 60px;
+        }
+        
+        .olControlPanel .olControlMouseDefaultsItemActive { 
+          background-color: blue;
+          background-image: url("/ol/theme/default/img/pan_on.png");
+        }
+        .olControlPanel .olControlMouseDefaultsItemInactive { 
+          background-color: orange;
+          background-image: url("/ol/theme/default/img/pan_off.png");
+        }
+        .olControlPanel .olControlDrawFeatureItemActive { 
+          width:  22px;  
+          height: 22px;
+          background-image: url("/ol/theme/default/img/draw_line_on.png");
+        }
+        .olControlPanel .olControlDrawFeatureItemInactive { 
+          width:  22px;  
+          height: 22px;
+          background-image: url("/ol/theme/default/img/draw_line_off.png");
+        }
+        .olControlPanel .olControlZoomBoxItemInactive { 
+          width:  22px;  
+          height: 22px;
+          background-color: orange;
+          background-image: url("/ol/img/drag-rectangle-off.png");
+        }
+        .olControlPanel .olControlZoomBoxItemActive { 
+          width:  22px;  
+          height: 22px;
+          background-color: blue;
+          background-image: url("/ol/img/drag-rectangle-on.png");
+        }
+        .olControlPanel .olControlZoomToMaxExtentItemInactive { 
+          width:  18px;  
+          height: 18px;
+          background-image: url("/ol/img/zoom-world-mini.png");
+        }
+
+/***** YUI - sobrescribe al treeview - usar !important***/
+.ygtvlabel{
+	font-size:7pt !important;
+	color:#000000;
+	line-height: 21px !important;
+	font-family:Arial;
+}
+
+/****************************************************/
+
+ .olControlLoadingPanel {
+            background-image:url(../icons/loading.gif);
+            margin-left: 30%;
+            margin-top: 50%;
+            position: relative;
+            width: 195px;
+            height: 11px;
+            background-position:center;
+            background-repeat:no-repeat;
+            display: none;
+        }
+
+
+.olControlPanZoomBar{
+top:69px !important;
+left:5px !important;
+
+}
+.olControlPanel{
+top:105px !important;
+
+
+}
+
+
+#toolbar{
+	background-color:#EEEEEE;
+	padding:1px -1px 0px 1px;
+	margin:0px;
+	width: 100%;
+	z-index:1050;
+    margin:0px;
+    cursor: auto;
+    position:absolute;
+}
+#botonera{
+	border:1px solid #A0A0A0;
+	margin:0px;
+}
+
+#toolbarRight{
+	position:absolute;
+	top:114px;
+	/*border:1px solid #000000;*/
+	right:4px;
+	width:15%;
+}
+
+        html, body {
+            font: normal 12px verdana;
+            margin: 0px;
+            padding: 0px;
+            border: 0px none;
+            overflow: hidden;
+            height: 100%;
+        }
+        .empty .x-panel-body {
+            padding-top:20px;
+            text-align:center;
+            font-style:italic;
+            color: gray;
+            font-size:11px;
+        }
+
+        
+        .boton{
+        	width:15px;
+        	border:0px;
+        	height:15px;
+        	background-color: #FF0000;
+        	margin:0px;
+        	padding:0px;
+        }
+        
+      
+	   .myDiv {
+    	position:absolute; 
+		left:222px; 
+		top:7px; 
+		width:831px; 
+		height:642px; 
+		background-color: #deecfd;
+		overflow: visible;  
+	   }
+   
+	
+
+#botonera{
+	width:28px; 
+	padding:0px;
+	margin:0px;
+	position:absolute;
+	top:15px;
+	left:25px;
+}
+#botonera img, #subbotonera1 img{
+	padding:0px;
+	margin:0px;
+	cursor:pointer;
+}
+#subbotonera1{
+	width:72px; 
+	padding:0px;
+	margin:0px;
+	display:none;
+}
+
+
+
+
+.mybutton button{
+	width:24px !important;
+	height:22px !important;
+}
+/*.x-toolbar {
+	border-style:none !important;
+	background:transparent !important;
+}
+*/
+/*.x-toolbar .x-btn-over .x-btn-center {
+background:none !important;
+}*/
+
+.xxxTB .x-btn-over .x-btn-center {
+background:none !important;
+}
+
+
+
+.xxxTB .x-btn-menu-active .x-btn-center{
+	background:none !important;
+}
+
+/*.x-toolbar .x-btn-menu-active .x-btn-center{
+	background:none !important;
+}
+*/
+
+
+.xxxTB .x-btn-with-menu .x-btn-center em {
+/*background:transparent url(/test/ol/extensionboton2.gif) no-repeat scroll right 0 !important;*/
+background-color:transparent;
+background-image:url(../images/extensionboton2.gif);
+background-repeat:no-repeat;
+background-attachment:scroll;
+background-position:top right; 
+
+}
+
+
+/*.x-toolbar .x-btn-click .x-btn-center{
+background-image:none !important;
+}*/
+
+
+.xxxTB .x-btn-click .x-btn-center{
+background-image:none !important;
+}
+
+
+
+.xxxTB {
+	background:transparent none repeat scroll 0% 50% !important;
+	border-style:none !important;
+}
+
+
+.myItem{
+	line-height:22px !important;
+}
+.myItem .x-menu-item-icon {
+	height:22px !important;
+	width:24px !important;
+	margin:0px 12px 0px 0px;
+}
+
+
+
+
+
+
+.x-menu {
+	background:#F0F0F0 url(../images/menu22px.gif) repeat-y scroll 0% !important;
+}
+
+.x-menu-item-checked .itemDpoint{
+	background:transparent url(/ol/theme/default/img/draw_point_on.png) no-repeat scroll center !important;
+}
+
+.itemDpoint {
+	background:transparent url(/ol/theme/default/img/draw_point_off.png) no-repeat scroll center !important;
+}
+.itemDpointOn {
+	background:transparent url(/ol/theme/default/img/draw_point_on.png) no-repeat scroll center !important;
+}
+
+
+/*
+.x-toolbar .x-btn-click .x-btn-center, .x-toolbar .x-btn-pressed .x-btn-center, .x-toolbar .x-btn-menu-active .x-btn-center {ext-all.css (line 282)
+background:transparent url(../images/default/toolbar/tb-btn-sprite.gif) repeat-x scroll 0pt -105px;
+}
+*/
+
+
+.MenuPanelItemPan{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -22px !important;
+}
+.MenuPanelItemPanOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -22px !important;
+}
+.MenuPanelItemZoomBox{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -154px !important;
+}
+
+.MenuPanelItemZoomBoxOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -154px !important;
+}
+.MenuPanelItemAddPath{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -88px !important;
+}
+.MenuPanelItemAddPathOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -88px !important;
+}
+.MenuPanelItemAddPoint{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -110px !important;
+}
+.MenuPanelItemAddPointOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -110px !important;
+}
+.MenuPanelItemAddPolygon{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -44px !important;
+}
+.MenuPanelItemAddPolygonOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -44px !important;
+}
+
+
+.MenuPanelItemQuery{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -264px !important;
+}
+.MenuPanelItemQueryOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -264px !important;
+}
+
+.MenuPanelItemPolyQuery{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -242px !important;
+}
+.MenuPanelItemPolyQueryOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -242px !important;
+}
+
+.MenuPanelItemDragFeature{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -286px !important;
+}
+.MenuPanelItemDragFeatureOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -286px !important;
+}
+
+
+.MenuPanelItemModifyFeature{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -286px !important;
+}
+.MenuPanelItemModifyFeatureOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -286px !important;
+}
+
+
+.MenuPanelItemZoomToMaxExtent{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll 0px -308px !important;
+}
+.MenuPanelItemZoomToMaxExtentOn{
+	background:transparent url(../images/sprite-controles.gif) no-repeat scroll -24px -308px !important;
+}
+
+
+
+
+.xxx{
+	background-image: url(/ol/theme/default/img/draw_point_on.png) !important;
+}
+
+#divLoading{
+	border:1px solid #666666;
+	background-color:#DDDDDD;
+	color:#000000;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:11px;
+	width:98px;
+	vertical-align:middle;
+	position:absolute;
+	top:49%;
+	filter:alpha(opacity=70); 
+    -moz-opacity:0.70;
+    opacity:0.70;
+	left:48%;
+	padding:2px;
+	padding-left:3px;
+	visibility:hidden;
+
+}
+#map{
+	position: absolute; left: 0px; top: 0px; width: 100%; height: 100%; z-index: 1;
+}
+/*******************************************************
+***       ESTILOS TABLA DATOS                        ***
+/******************************************************/
+.tableFichaHeader{
+	font-weight:bold;
+	background-color:#CAD9EC;
+}
+.tableFicha{
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:7.5pt;
+	border:1px solid #A6BDDB;
+}
+.tableFicha td{
+	border-left:1px solid #F1EFE2;
+	border-right:1px solid #F1EFE2;
+	border-bottom:1px solid #F1EFE2;
+}
+.tabla_datos {
+	font-family:Verdana, Helvetica, sans-serif; text-decoration: none;font-size: 12px; border: 1px solid #A6BDDB; border-collapse: collapse;
+}
+.tabla_indi {
+	font-family:Verdana, Helvetica, sans-serif; text-decoration: none;font-size: 12px; border: 1px solid #A6BDDB; border-collapse: collapse;
+}
+.tabla_datos tr {
+	background-color:#CAD9EC; border: 1px solid #A6BDDB;
+}
+.tabla_datos td {
+	padding:4px; border: 1px solid #A6BDDB;
+}
+.tabla_datos th {
+	font-weight:bold; padding:4px; color: #000000; background-color: #F2F2F2;	border: 1px solid #A6BDDB;
+}
+.fila_impar td{
+	background-color:#F2F2F2;
+	font-size: 12px;
+}
+.fila_impar th{
+	background-color:#CAD9EC;
+	font-size: 12px;
+}
+.fila_par th{
+	background-color:#CAD9EC;
+	font-size: 6px;
+}
+.subtitulo {
+	font-family: Verdana, Helvetica, sans-serif;	font-size: 13px; font-style: normal;font-weight: bold;
+	vertical-align: middle;	color: #444444;	margin-left:5px;
+}
+p.padding {padding-left: 3px;
+padding-right: 30px;
+font-family:Verdana, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: normal;
+color: #000000;
+}
+p.paddingprov {padding-left: 5px;
+padding-right: 30px;
+font-family:Verdana, Helvetica, sans-serif;
+font-size: 10px;
+font-weight: normal;
+color: #000000;
+}
+/************ FIN ESTILOS TABLA DATOS*********/
+
+.header {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 30px;
+	font-weight: bolder;
+	color: #15428B;
+	text-decoration: none;
+}	 
+.header_gif {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #15428B;
+	text-decoration: none;
+}	 
+.boton_gif {
+
+	font-family: Tahoma;
+	font-size: 12px;
+	font-weight: normal;
+	color: #15428B;
+	text-decoration: none;
+	border: 1px solid #F6E8DF;
+	background-color: #DFE8F6;
+}
+/************ Evolucion matricula *********/
+#vertgraph {
+width: 378px;
+height: 207px;
+position: relative;
+/*background: url("g_backbar.gif") no-repeat; */
+}
+#vertgraph ul {
+width: 378px;
+height: 207px;
+margin: 0;
+padding: 0;
+}
+#vertgraph ul li {
+position: absolute;
+width: 28px;
+height: 160px;
+bottom: 34px;
+padding: 0 ;
+margin: 0 ;
+/*background: url("g_colorbar3.jpg") no-repeat !important; */
+text-align: center;
+font-weight: bold;
+color: white;
+line-height: 2.5em;
+}
+#vertgraph li.critical { left: 24px; background-position: 0px bottom ; }
+#vertgraph li.high { left: 101px; background-position: -28px bottom; }
+#vertgraphmedium { left: 176px; background-position: -56px bottom ; }
+#vertgraph li.low { left: 251px; background-position: -84px bottom ; }
+#vertgraph li.info { left: 327px; background-position: -112px bottom ; }

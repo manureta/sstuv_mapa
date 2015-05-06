@@ -1,0 +1,118 @@
+﻿<html>
+    <head>
+        <title>urBAsig - Visualizador de mapa de la Direcci&oacute;n de Ordenamiento Urbano y Territorial</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" href="./script/ext-3.4.0/resources/css/ext-all.css" />
+        <link rel="stylesheet" type="text/css" href="http://extjs.cachefly.net/ext-3.4.0/examples/shared/examples.css" />
+        <link rel="stylesheet" type="text/css" href="./script/ext-3.4.0/resources/css/xtheme-gray.css"/>
+		<link rel="stylesheet" type="text/css" href="./script/GeoExt.ux/printpreview.css">
+        <link rel="stylesheet" type="text/css" href="./theme/openlayers/default/style.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/openlayers/default/google.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/geoext/css/geoext-all.css" />
+        <link rel="stylesheet" type="text/css" href="./theme/gxp/all.css"/>
+        <link rel="stylesheet" type="text/css" href="./theme/vialidad.css"/>
+        <link rel="stylesheet" type="text/css" href="./theme/educacion.css"/>
+        <script src="./script/ext-3.4.0/adapter/ext/ext-base.js"></script>
+        <script src="./script/ext-3.4.0/ext-all-debug.js"></script>
+        <script src="./script/ext-3.4.0/examples/ux/ProgressBarPager.js"></script>
+        <script src="./script/OpenLayers.js"></script>
+        <script src="./script/GeoExt.js"></script>
+		<script type="text/javascript" src="./script/GeoExt.ux/Ext.ux.SearchField.js"></script>
+        <script type="text/javascript" src="./script/GeoExt.ux/ProgressBarPager.js"></script>
+		 
+		<script type="text/javascript" src="./script/GeoExt.ux/Ext.ux.GridPrinter.js"></script>
+        <script src="./script/gxp/script/loader.js"></script>
+
+        <script type="text/javascript" src="./script/RowExpander.js"></script>
+
+        <script type="text/javascript" src="./script/GeoExt.ux/PrintPreview.js"></script>
+        <script type="text/javascript" src="http://localhost:8080/geoserver/pdf/info.json?var=printCapabilities"></script>
+
+        <script type="text/javascript" src="./script/mootools-core-1.4.5.js"></script>
+        <script type="text/javascript" src="./script/mootools-more-1.4.0.1.js"></script>
+        <script type="text/javascript" src="./script/proj4.js"></script>
+        <script type="text/javascript" src="./script/Nomenclatura.class.js"></script>
+        <script type="text/javascript" src="./script/Nomenclatura_partido_partida.class.js"></script>
+        <script type="text/javascript" src="./script/posicionamiento.class.js"></script>
+        <script type="text/javascript" src="./script/Buffer.class.js"></script>
+        <script type="text/javascript" src="./script/Sesion.class.js"></script>
+        <script type="text/javascript" src="./script/Ficha.class.js"></script>
+         <script type="text/javascript" src="./script/Distritos.class.js"></script> 
+         <script type="text/javascript" src="./script/dist.js"></script>         
+       <script type="text/javascript" src="./app/grupos_capas.js"></script>
+        <script type="text/javascript" src="./app/sources.js"></script>        
+        <script type="text/javascript" src="./app/layers.js"></script>
+        <script type="text/javascript" src="./app/utils.js"></script>
+        <script type="text/javascript" src="appprint.js"></script>
+        <link rel="stylesheet" type="text/css" href="./theme/gxp/all.css"/>
+        <link rel="stylesheet" type="text/css" href="./theme/viewer.css"/>
+		
+		<script type="text/javascript">
+		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		  ga('create', 'UA-41319669-1', 'gov.ar');
+		  ga('send', 'pageview');
+
+		</script>
+		
+<style type="text/css">
+body {
+    background-color: #FFFFFF !important;
+    font-family: helvetica,tahoma,verdana,sans-serif;
+    font-size: 13px;
+    padding: 0px 0px 0px;
+}
+  </style>
+<div id="header" class="x-hidden">
+    <h1>urBAsig</h1>
+    <button id="sesion">Cargando...</button>
+</div>
+<div id="nomenclatura" class="x-hidden">
+    <div>
+        <label>Partido:</label>
+        <input id="partidoN" type="text" tipo="numero" largo="3"/>
+        <br>
+        <label>Circunscripción:</label>
+        <input id="circunscripcionN" type="text" tipo="texto" largo="2"/>
+        <br>
+        <label>Sección:</label>
+        <input id="seccionN" type="text" tipo="texto" largo="2"/>
+        <br>
+        <label>Chacra:</label>
+        <input id="chacraNN" type="text" tipo="numero" largo="4"/><input id="chacraTN" type="text" tipo="texto" largo="3"/>
+        <br>
+        <label>Quinta:</label>
+        <input id="quintaNN" type="text" tipo="numero" largo="4"/><input id="quintaTN" type="text" tipo="texto" largo="3"/>
+        <br>
+        <label>Fracción:</label>
+        <input id="fraccionNN" type="text" tipo="numero" largo="4"/><input id="fraccionTN" type="text" tipo="texto" largo="3"/>
+        <br>
+        <label>Manzana:</label>
+        <input id="manzanaNN" type="text" tipo="numero" largo="4"/><input id="manzanaTN" type="text" tipo="texto" largo="3"/>
+        <br>
+        <label>Parcela:</label>
+        <input id="parcelaNN" type="text" tipo="numero" largo="4"/><input id="parcelaTN" type="text" tipo="texto" largo="3"/>
+        <br>
+        <button>Buscar</button>
+    </div>
+</div>
+ <div id="nomenclatura_par" class="x-hidden">
+    <div>
+        <label>Partido:</label>
+        <input id="partidoN" type="text" tipo="numero" largo="3"/>
+        <br>
+        <label>Partida:</label>
+        <input id="partidaN" type="text" tipo="texto" largo="6"/>
+        <br>
+        <button>Buscar</button>
+    </div>
+</div>
+
+    </head>
+    <body>
+
+    </body>
+</html>
