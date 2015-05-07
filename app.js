@@ -36,12 +36,14 @@ Ext.onReady(function() {
                             title: "Servicios WMS",
                             html: "<iframe  width='100%' height='100%' src='./views/wms.html'>"
                         }, {
-                            title: "Solapa a completar",
-                            html: "<iframe  width='100%' height='100%' src='./views/vacio.html'>"
-                        }, {
+                            title: "Acerca de IDEHab",
+                            html: "<iframe  width='100%' height='100%' src='./views/acercadeidehab.html'>"
+                        }
+/*, {
                             title: "Otra solapa",
                             html: "<iframe  width='100%' height='100%' src='./views/vacio.html'>"
                         }
+*/
                     ]
                 },
                 {
