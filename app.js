@@ -363,7 +363,7 @@ function showPrintWindow() {
         width: 550,        
         autoHeight: true,
         items: new GeoExt.ux.PrintPreview({
-            autoHeight: true,
+            autoHeight: false,
             printMapPanel: {
                 // limit scales to those that can be previewed
                 //limitScales: true,
@@ -379,8 +379,8 @@ function showPrintWindow() {
             printProvider: {
                 // using get for remote service access without same origin
                 // restriction. For async requests, we would set method to "POST".
-                method: "GET",
-                //method: "POST",
+                //method: "GET",
+                method: "POST",
                 // capabilities from script tag in Printing.html.
                 capabilities: printCapabilities,
                 listeners: {
