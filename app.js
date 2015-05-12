@@ -30,9 +30,6 @@ Ext.onReady(function() {
                             autoScroll: true,
                             html: "<iframe  width='100%' height='100%' src='./views/ayuda.html'>"
                         }, {
-                            title: "Acerca de",
-                            html: "<iframe  width='100%' height='100%' src='./views/acercade.html'>"
-                        }, {
                             title: "Servicios WMS",
                             html: "<iframe  width='100%' height='100%' src='./views/wms.html'>"
                         }, {
