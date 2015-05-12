@@ -1,5 +1,5 @@
 var grupos_capas = {    
-    "local" : {title: "SSTUV",  expanded: false},
+    "local" : {title: "SSTUV",  expanded: true},
     "capas_ivba" : {title: "IVBA", expanded: false},
     "ideba" : {title: "IDEBA",  expanded: false},	    
     "idera" : {title: "IDERA",  expanded: false},	    

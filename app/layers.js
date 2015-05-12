@@ -8,15 +8,58 @@ var layers = [
         type: "OpenLayers.Layer.Vector",
         group: "consulta"
     },
-    
+// SSTUV
+	{
+		source:"sstuv",
+		name: "registro:v_caratulas", //"villas_y_asentamientos_confirmados",
+		visibility: true,
+		group: "local"
+   	}, 
+
+// de UrbaSIG
+	{
+		source:"urbasig",
+		name: "zonificacion",
+		visibility: false,
+		group: "ideba"
+   	}, 
     // ARBA
     {
         source: "arba",
         name: "Grupo ARBA",
         visibility: false,
         title: "Catastro",
-        group: "arba"
+        group: "ideba"
     },    
+    {
+        source: "geodesia",
+        name: "ParcelarioCompleto",
+        visibility: false,
+        title: "Parcelario Geodesia",
+        group: "ideba"
+    },   
+	{
+		source:"ign",
+		name: "ideign:CURSOS_DE_AGUA",
+		visibility: false,
+		title: "Cursos de Agua",
+		group: "idera"
+   	}, 
+	{
+		source:"ign",
+		name: "ideign:CUERPOS_DE_AGUA",
+		visibility: false,
+		title: "Cuerpo de Agua",
+		group: "idera"
+   	}, 
+	{
+		source:"ign",
+		name: "capabaseargenmap",
+		visibility: false,
+		title: "Capa Base IGN",
+		group: "idera"
+   	}, 
+ 
     // Capas de la DPUyT
     {
      source: "cartolocal",
@@ -32,46 +75,61 @@ var layers = [
         name: "partidos",
         visibility: true,
         title: "Límite de Partidos",
-        group: "limi"
+     visibility: false,
+        group: "ideba"
     },
     {
         source: "bing",
         name: "Road",
         title: "Bing Road",
-        group: "background"
+        group: "background",
+     visibility: false,
+	selected: false
     },
     {
         source: "bing",
         name: "Aerial",
         title: "Bing Aerial",
-        group: "background"
+        group: "background",
+     visibility: false,
+        selected: false
     },
     {
         source: "bing",
         name: "AerialWithLabels",
         title: "Bing Aerial Labels",
-        group: "background"
+        group: "background",
+     visibility: false,
+        selected: false
     },
     {
         source: "google",
         name: "HYBRID",
         title: "Google Híbrido",
-        group: "background"
+        group: "background",
+     visibility: false,
+        selected: false
     }, {
         source: "google",
         name: "ROADMAP",
         title: "Google Callejero",
-        group: "background"
+        group: "background",
+     visibility: false,
+        selected: false
     }, {
         source: "google",
         name: "SATELLITE",
         title: "Google Satélite",
-        group: "background"
+        group: "background",
+     visibility: false,
+        selected: false
     }, {
         source: "google",
         name: "TERRAIN",
         title: "Google Físico",
-        group: "background"
+        group: "background",
+     visibility: false,
+        selected: false
     },
     {
         source: "osm",
