@@ -26,15 +26,15 @@ Ext.onReady(function() {
                     activeTab: 0,
                     items: ["mymap",
                         {
-                            title: "Ayuda",
-                            autoScroll: true,
-                            html: "<iframe  width='100%' height='100%' src='./views/ayuda.html'>"
+                            title: "Acerca de IDEHab",
+                            html: "<iframe  width='100%' height='100%' src='./views/acercadeidehab.html'>"
                         }, {
                             title: "Servicios WMS",
                             html: "<iframe  width='100%' height='100%' src='./views/wms.html'>"
                         }, {
-                            title: "Acerca de IDEHab",
-                            html: "<iframe  width='100%' height='100%' src='./views/acercadeidehab.html'>"
+                            title: "Ayuda",
+                            autoScroll: true,
+                            html: "<iframe  width='100%' height='100%' src='./views/ayuda.html'>"
                         }
 /*, {
                             title: "Otra solapa",
