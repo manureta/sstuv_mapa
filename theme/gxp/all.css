@@ -212,6 +212,14 @@
     background-image: url(img/silk/printer.png);
 }
 
+.gxp-streetview {
+    background-image: url(img/silk/streetv.gif);
+}
+
+.gxp-icon-permalink{
+    background-image: url(img/silk/link.png);
+}
+
 
 /* gxp_cataloguesearch */
 .x-action-col, .gxp-icon-addlayers {

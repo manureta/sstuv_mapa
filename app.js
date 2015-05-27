@@ -160,24 +160,12 @@ Ext.onReady(function() {
                     width: 300
                 }
             }, { 
-	    }, {
-                xtype: "tbbutton",
-                actionTarget: "map.tbar",
-                actions: [{
-                        text: 'Localización',
-                        iconCls: 'bt-localizacion',
-                        handler: function(event) {
-                            posicioname().show();
-                        }
-                    }]
-            },  
-            {
                 xtype: "tbbutton",
                 actionTarget: "map.tbar",
                 actions: [{
                     text: 'Imprimir',
                     iconCls: 'bt-printer',
-		    disabled: true,
+		    disabled: false,
                     handler: function(event) {
                          showPrintWindow();
                     }
@@ -194,13 +182,6 @@ Ext.onReady(function() {
                                     iconCls: 'bt-buffer',
                                     handler: function() {
                                         buffer.mostrar();
-                                    }
-                                },
-                                {
-                                    text: 'Partidos',
-                                    iconCls: 'bt-distritos',
-                                    handler: function() {
-                                        distritos.mostrar();
                                     }
                                 },
                                 {
@@ -245,7 +226,7 @@ Ext.onReady(function() {
             xtype:'tbbutton',
             actionTarget: "map.tbar",
               actions: [{
-                text: 'STREETVIEW',
+                text: 'Street View',
                 iconCls: "gxp-streetview",
                 handler: function() {
                    streetView().show(); 
@@ -259,7 +240,7 @@ Ext.onReady(function() {
             xtype: "tbbutton",
             actionTarget: "map.tbar",
             actions: [{
-                text: 'Permalink',
+                text: 'Enviar link',
                 iconCls: "gxp-icon-permalink",
                 handler: function() {
                     Ext.MessageBox.show({
