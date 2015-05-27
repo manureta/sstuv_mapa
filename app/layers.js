@@ -11,7 +11,7 @@ var layers = [
 // SSTUV
 	{
 		source:"sstuv",
-		name: "registro:v_caratulas", //"villas_y_asentamientos_confirmados",
+		name: "registro:folios,registro:parcelas_nomenclas", //"registro:v_caratulas", //"villas_y_asentamientos_confirmados",registro:folios,registro:parcelas_nomenclas
 		visibility: true,
 		group: "local"
    	}, 
@@ -20,6 +20,30 @@ var layers = [
 	{
 		source:"urbasig",
 		name: "zonificacion",
+		visibility: false,
+		group: "ideba"
+   	}, 
+	{
+		source:"urbasig",
+		name: "areas_ley_8912",
+		visibility: false,
+		group: "ideba"
+   	}, 
+	{
+		source:"urbasig",
+		name: "usos_del_suelo",
+		visibility: false,
+		group: "ideba"
+   	}, 
+	{
+		source:"urbasig",
+		name: "urba_cerradas",
+		visibility: false,
+		group: "ideba"
+   	}, 
+	{
+		source:"urbasig",
+		name: "municipalidades",
 		visibility: false,
 		group: "ideba"
    	}, 
@@ -38,9 +62,19 @@ var layers = [
         title: "Parcelario Geodesia",
         group: "ideba"
     },   
+   // SALUD
+    {
+        source: "salud",
+        name: "salud",
+        visibility: false,
+        title: "Establecimientos de Salud",
+        group: "ideba"
+    },   
+
+   // IDERA
 	{
 		source:"ign",
-		name: "ideign:CURSOS_DE_AGUA",
+			name: "ideign:CURSOS_DE_AGUA",
 		visibility: false,
 		title: "Cursos de Agua",
 		group: "idera"
@@ -68,7 +102,7 @@ var layers = [
      title: "areametro",
      group: "local"
     },
-    
+ 
     // Capas Base
     {
         source: "arbalocal",
