@@ -27,7 +27,7 @@ var sources = {
         ptype: "gxp_wmscsource"    
     },
     proyectosgis: {
-        url: "http://localhost:8080/geoserver/wms?",
+        url: "http://190.188.234.6/geoserver/wms?",
         title: "Proyectos GIS",
         ptype: "gxp_wmscsource"
     },
