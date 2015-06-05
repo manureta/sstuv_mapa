@@ -65,7 +65,7 @@ Ext.onReady(function() {
                                     flex: 1
                                 },
                                 {
-                                    height: 250,
+                                    height: 350,
                                     layout: "accordion",
                                     items: [{
                                             title: "Leyenda",

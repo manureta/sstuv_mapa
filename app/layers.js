@@ -11,7 +11,7 @@ var layers = [
 // SSTUV
 	{
 		source:"sstuv",
-		name: "registro:folios,registro:parcelas_nomenclas", //"registro:v_caratulas", //"villas_y_asentamientos_confirmados",registro:folios,registro:parcelas_nomenclas
+		name: "caratulas", 
 		visibility: true,
 		group: "local"
    	}, 
