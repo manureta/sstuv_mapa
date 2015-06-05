@@ -16,7 +16,7 @@ Ext.onReady(function() {
                     region: "north",
                     border: false,
                     height: 62,
-                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F58030">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: top;"> <img title="Provincia de Buenos Aires | Gob. Daniel Scioli" src="./app/img/logoBAprovincia2014.png" alt="Buenos Aires | Gob. Daniel Scioli"> </td><td align="center" width="30%"  style="vertical-align: top;"> <img title="IDEHab" src="./app/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: top;"> <img title="Subsecretaria Social de Tierras Urbanismo y Vivienda" src="./app/img/logo-solo.png" alt="Sub. Social de Tierras Urbanismo y Vivienda"><img title="Ministerio de Infraestructura" src="./app/img/ministerio-de-in25.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
+                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F58030">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: top;"> <img title="Provincia de Buenos Aires | Gob. Daniel Scioli" src="./app/img/logoBAprovincia2014.png" alt="Buenos Aires | Gob. Daniel Scioli"> </td><td align="center" width="30%"  style="vertical-align: top;"> <img title="IDEHab" src="./app/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: top;"> <img title="Ministerio de Infraestructura" src="./app/img/ministerio-de-in25.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
                 },
                 {
                     id: "centerpanel",
@@ -185,7 +185,7 @@ Ext.onReady(function() {
                                     }
                                 },
                                 {
-                                    text: 'Nomenclatura',
+                                    text: 'Busquedas',
                                     iconCls: 'gxp-icon-find',
                                     menu: {
                                         items: [
@@ -196,11 +196,23 @@ Ext.onReady(function() {
                                                 }
                                             },
                                             {
+                                                text: 'Por Partido-Barrio',                                                
+                                                handler: function(item, event) {
+                                                    nomenclatura_par.mostrar();
+                                                }
+                                            },
+                                            {
                                                 text: 'Por Nomenclatura',                                                
                                                 handler: function() {
                                                     nomenclatura.mostrar();
                                                 }
-                                            }
+                                            },
+                                            {
+                                                text: 'Por Folio Barrial',                                                
+                                                handler: function(item, event) {
+                                                    nomenclatura_par.mostrar();
+                                                }
+                                            },
                                         ]
                                     }
                                 }

@@ -1,5 +1,11 @@
 var urba = "sig.gobierno.gba.gov.ar:8080";
 var sources = {
+    sstuv: {
+        url: "http://190.188.234.6/geoserver/wms?",
+        title: "SSTUV",
+        ptype: "gxp_wmssource"
+    },
+
     urbasig: {
         url: "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?",
         title: "Buenos Aires - URBASIG",
@@ -24,11 +30,6 @@ var sources = {
         url: "http://localhost:8080/geoserver/wms?",
         title: "Proyectos GIS",
         ptype: "gxp_wmscsource"
-    },
-    sstuv: {
-        url: "http://190.188.234.6/geoserver/registro/wms?",
-        title: "SSTUV",
-        ptype: "gxp_wmssource"
     },
    
     "mapaescolar": {
