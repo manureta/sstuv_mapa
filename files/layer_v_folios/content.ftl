@@ -3,16 +3,18 @@ Body section of the GetFeatureInfo template, it's provided with one feature coll
 will be called multiple times if there are various feature collections
 -->
 <table class="featureInfo">
-  <caption class="featureInfo">Info de la capa ${type.name}</caption>
+  <caption class="featureInfo"></caption>
 
   <tr>
 <#list type.attributes as attribute>
   <#if !attribute.isGeometry>
+  <#if !attribute.fid>
     <th >${attribute.name}</th>
+  </#if>
   </#if>
 </#list>
     <th>Caratula</th>
-    <th>Legajo(*) </th>
+    <th>Folio(*) </th>
   </tr>
 
 <#assign odd = false>
@@ -25,12 +27,14 @@ will be called multiple times if there are various feature collections
   <#assign odd = !odd>
 
   <#list feature.attributes as attribute>
-    <#if !attribute.isGeometry>
+  <#if !attribute.isGeometry>
+    <#if !attribute.fid>
       <td>${attribute.value}</td>
     </#if>
+  </#if>
   </#list>
-	<td><a href='#'>Descarga ${feature.attributes.cod_depto.value}</a></td>
-	<td><a href='#'>Descarga (usuarios registrados)</a></td>
+	<td><a href='/caratula.php?idfolio={feature.attributes.cod_depto.value}<'>Descargar</a></td>
+	<td><a href='caratula.php?idfolio=&foliocompleto'>Descargar (usuarios registrados)</a></td>
   </tr>
 </#list>
 </table>
