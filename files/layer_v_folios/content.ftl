@@ -8,9 +8,9 @@ will be called multiple times if there are various feature collections
   <tr>
 <#list type.attributes as attribute>
   <#if !attribute.isGeometry>
-  <#if !attribute.fid>
+  <!--#if !attribute.fid-->
     <th >${attribute.name}</th>
-  </#if>
+  <!--/#if -->
   </#if>
 </#list>
     <th>Caratula</th>
@@ -28,13 +28,13 @@ will be called multiple times if there are various feature collections
 
   <#list feature.attributes as attribute>
   <#if !attribute.isGeometry>
-    <#if !attribute.fid>
+    <!--#if !attribute.fid -->
       <td>${attribute.value}</td>
-    </#if>
+    <!--/#if -->
   </#if>
   </#list>
-	<td><a href='/caratula.php?idfolio={feature.attributes.cod_depto.value}<'>Descargar</a></td>
-	<td><a href='caratula.php?idfolio=&foliocompleto'>Descargar (usuarios registrados)</a></td>
+	<td><a href='/registro/caratula.php?idfolio=${feature.attributes.cod_folio.value}'>Descargar</a></td>
+	<td><a href='/registro/caratula.php?idfolio=${feature.attributes.cod_folio.value}&foliocompleto'>Descargar (usuarios registrados)</a></td>
   </tr>
 </#list>
 </table>
