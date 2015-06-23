@@ -1,6 +1,6 @@
 var server = "http://sig.gobierno.gba.gov.ar:8080";
 var macizos = "macizos", parcelas = "parcelas";
-var workspace = ""; //"cartografiabase";
+var workspace = "arba"; //"cartografiabase";
 
 var Nomenclatura_par = new Class({
     Implements: Events,
@@ -156,7 +156,7 @@ var Nomenclatura_par = new Class({
 
         };
         var self = this;
-        var capa, partido, partida;
+        var capa, partido, partida, filtro;
 
         if (nomenclatura_par.partido.seteado) {//Tiene Partido?
             if (nomenclatura_par.partida.seteado) {//Tiene partida?
@@ -164,16 +164,19 @@ var Nomenclatura_par = new Class({
                 capa = "parcelas";
                 this.partido = nomenclatura_par.partido.valor;
                 this.partida = nomenclatura_par.partida.valor;
+                filtro = '<And><PropertyIsEqualTo> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsEqualTo><PropertyIsEqualTo> <PropertyName>partida</PropertyName> <Literal>' + this.partida + '</Literal> </PropertyIsEqualTo></And>';
 
             } else {
                 capa = "partidos";
-                this.nomenclatura_par = nomenclatura_par.partido.valor;
+                this.partido = nomenclatura_par.partido.valor;
+                filtro = '<PropertyIsEqualTo> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsEqualTo>';
             }
         } else {
             Ext.MessageBox.alert('Error', 'Debe definir almenos el partido.');
             return false;
         }
-        console.log(capa, this.partido, this.partida);
+
+        console.log(capa, this.partido, this.partida, this.nomenclatura_par);
         this.win.disable();
         this.reqJsonP = new Request.JSONP({
             url: server + '/geoserver/' + workspace + '/wfs',
@@ -192,8 +195,8 @@ var Nomenclatura_par = new Class({
                 srsName: app.mapPanel.map.getProjection(),
                 outputFormat: 'text/javascript',
                 format_options: 'callback:callbackNomenclatura_par',
-                filter: '<And><PropertyIsEqualTo> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsEqualTo><PropertyIsEqualTo> <PropertyName>partida</PropertyName> <Literal>' + this.partida + '</Literal> </PropertyIsEqualTo></And>',
-            },
+            	filter: filtro
+	    },
         }).send();
     },
     //alert ();
