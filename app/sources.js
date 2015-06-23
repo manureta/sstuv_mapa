@@ -1,7 +1,7 @@
 var urba = "sig.gobierno.gba.gov.ar:8080";
 var sources = {
     sstuv: {
-        url: "http://190.188.234.6/geoserver/wms?",
+        url: "http://190.188.234.6/geoserver/publico/wms?",
         title: "SSTUV",
         ptype: "gxp_wmssource"
     },
@@ -28,7 +28,7 @@ var sources = {
     },
     proyectosgis: {
         url: "http://190.188.234.6/geoserver/wms?",
-        title: "Proyectos GIS",
+        title: "Otras",
         ptype: "gxp_wmscsource"
     },
    
