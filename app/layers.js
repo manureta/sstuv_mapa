@@ -10,11 +10,78 @@ var layers = [
     },
 // SSTUV
 	{
+		source:"proyectosgis",
+		name: "geonode:registro_organizaciones", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},        
+	{
+		source:"proyectosgis",
+		name: "geonode:lote_con_servicios", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},
+	{
+		source:"proyectosgis",
+		name: "geonode:subsidios", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},	
+	{
+		source:"proyectosgis",
+		name: "geonode:familia_propietaria", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},
+	{
+		source:"proyectosgis",
+		name: "geonode:expropiaciones", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},	
+	{
+		source:"proyectosgis",
+		name: "geonode:conflictos", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},
+	{
+		source:"proyectosgis",
+		name: "registro:caratulas", 
+		title: "Villas y Asentamientos (Mapeo Preliminar)",
+		visibility: true,
+		group: "local",
+		styles: "caratulas_48078e41" 
+   	},
+	{
 		source:"sstuv",
-		name: "villas_y_asentamientos_confirmados", 
+		name: "villas_y_asentamientos_confirmados_rppvap", 
+		title: "Villas y Asentamientos (Confirmados)",
 		visibility: true,
 		group: "local"
-   	}, 
+   	},	
+	{
+		source:"proyectosgis",
+		name: "geonode:rppvap_avance", 
+		title: "RPPVAP Avance Provincial",
+		visibility: false,
+		group: "local"
+   	},
+	{
+		source:"proyectosgis",
+		title: "Limite Partido",
+		name: "geonode:partidos_pba_2014_cod_catastro", 
+		visibility: false,
+		group: "local",
+		styles: "partidos_pba_2014_cod_catastro_6be100d9" 
+   	},
+
 
 // de UrbaSIG
 	{
@@ -141,15 +208,15 @@ var layers = [
         name: "HYBRID",
         title: "Google Híbrido",
         group: "background",
-     visibility: false,
+	visibility: false,
         selected: false
-    }, {
+         }, {
         source: "google",
         name: "ROADMAP",
         title: "Google Callejero",
         group: "background",
-     visibility: false,
-        selected: false
+	visibility: true,
+        selected: true
     }, {
         source: "google",
         name: "SATELLITE",
@@ -169,7 +236,8 @@ var layers = [
         source: "osm",
         name: "mapnik",
         title: "Open Street Map",
-        selected: true,
+	visibility: false,        
+	selected: false,
         group: "background"
     },
     {
