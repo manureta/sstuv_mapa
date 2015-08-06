@@ -53,27 +53,40 @@ Ext.onReady(function() {
                     collapseMode: "mini",
                     collapsed: false,
                     width: 300,
+		    align: 'stretch',
+		    flex: 1,
                     defaults: {
                         width: "100%",
                         layout: "fit"
                     },
                     items:
-                            [{
+                            [
+                                {
+                                    layout: "accordion",
+				    multi: true,
+		 		    flex: 1,
+                                    items: [
+{
                                     title: "Capas",
                                     id: "layers_tree",
                                     border: false,
-                                    flex: 1
+				    autoScroll: true,
+					    pack: 'start',
+				    flex: 1
                                 },
-                                {
-                                    height: 350,
-                                    layout: "accordion",
-                                    items: [{
+{
                                             title: "Leyenda",
                                             autoScroll: true,
-                                            id: "legend"
+                                            id: "legend",
+					    pack: 'start',
+					    flex: 2
                                         }, {
                                             title: "Referencia de posición",
-                                            id: "position"
+                                            id: "position",
+					    pack: 'end',
+					    multi: true,
+						height: 60
+					   
                                         }]
                                 }]
                 }]
