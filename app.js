@@ -378,7 +378,7 @@ xtype: "combo",
 
 // BUSQUEDAS
 	busqueda_barrio = new Busqueda_Barrio(this);
-	busqueda_folio = new Busqeuda_Folio(this);
+	busqueda_folio = new Busqueda_Folio(this);
 	
     //add highlight of identified object to map, called from feature-info render-event, configured in userconfig.ashx (from database))
     function addHighlight(feature) {
