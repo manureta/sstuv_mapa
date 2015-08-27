@@ -36,6 +36,7 @@
         <script type="text/javascript" src="./script/Nomenclatura.class.js"></script>
         <script type="text/javascript" src="./script/Nomenclatura_partido_partida.class.js"></script>
         <script type="text/javascript" src="./script/BusquedaBarrio.class.js"></script>
+        <script type="text/javascript" src="./script/BusquedaFolio.class.js"></script>
         <script type="text/javascript" src="./script/posicionamiento.class.js"></script>
         <script type="text/javascript" src="./script/dist.js"></script>         
 	<script type="text/javascript" src="./script/streetView.class.js"></script>
