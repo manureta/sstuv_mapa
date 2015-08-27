@@ -13,7 +13,7 @@ var Nomenclatura_par = new Class({
         this.clickEnMapa();
         this.dom.getElement('button').addEvent('click', this.consultar.bind(this));
         window.callbackNomenclatura_par = this.procesarRespuesta.bind(this);
-        this.capa = new OpenLayers.Layer.Vector("Consulta Nomenclatura", {
+        this.capa = new OpenLayers.Layer.Vector("Consulta Partida", {
             group: "default"
         });
     },
