@@ -3,7 +3,26 @@ var permalink;
 
 OpenLayers.ProxyHost = "./prox/?url=";
 
+
+
 Ext.onReady(function() {
+
+
+//GEOEXT!!!!
+/*
+var storeprojects= 
+new  Ext.data.Store( {
+     fields: ['abbr', 'nombre'],
+     data :[ 
+         {"abbr":"DEMO", "nombre":"Demostracion de proyectos"},
+         {"abbr":"IDEHAB", "nombre":"Inf. de Datos Espaciales de Habitat"},
+         {"abbr":"SSTUV", "nombre":"Subse Tierra, Urbanismo y Viviendas"}]
+         //...
+     ,
+	autoLoad: true
+ });
+*/
+
     GeoExt.Lang.set("es");
     app = new gxp.Viewer({
         proxy: "./prox/?url=",
@@ -15,8 +34,8 @@ Ext.onReady(function() {
                     xtype: "container",
                     region: "north",
                     border: false,
-                    height: null,
-                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F58030">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;"> <img title="Provincia de Buenos Aires | Gob. Daniel Scioli" src="./app/img/ba.blanco.png" alt="Buenos Aires | Gob. Daniel Scioli"> </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: center;"> <img title="Ministerio de Infraestructura" src="./app/img/ministerio-subse.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
+                    height: 40,
+                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F58030" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;"> <img title="Provincia de Buenos Aires | Gob. Daniel Scioli" src="./app/img/ba.blanco.png" alt="Buenos Aires | Gob. Daniel Scioli"> </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: center;"> <img title="Ministerio de Infraestructura" src="./app/img/ministerio-subse.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
                 },
                 {
                     id: "centerpanel",
@@ -47,7 +66,7 @@ Ext.onReady(function() {
                     region: "west",
                     id: "westcontainer",
                     layout: "vbox",
-                    title: "Capas de Información",
+                    title: "Información",
                     border: true,
                     collapsible: true,
                     collapseMode: "mini",
@@ -61,6 +80,17 @@ Ext.onReady(function() {
                     },
                     items:
                             [
+{title: "Proyectos",
+emptyText: "Seleccione Proyecto...",
+id: "projects_combo",
+xtype: "combo",
+     fieldLabel: 'Seleccione el proyecto',
+     store:null, //storeprojects, 
+     queryMode: 'local',
+     displayField: 'nombre',
+     valueField: 'abbr'
+				
+					},
                                 {
                                     layout: "accordion",
 				    multi: true,
@@ -72,6 +102,7 @@ Ext.onReady(function() {
                                     border: false,
 				    autoScroll: true,
 					    pack: 'start',
+					multi:true,
 				    flex: 1
                                 },
 {
@@ -79,6 +110,7 @@ Ext.onReady(function() {
                                             autoScroll: true,
                                             id: "legend",
 					    pack: 'start',
+					  multi:true,
 					    flex: 2
                                         }, {
                                             title: "Referencia de posición",
@@ -184,12 +216,14 @@ Ext.onReady(function() {
                     }
                 }]
             },
+
+// MENU DE BUSQUEDAS
             {
                 xtype: 'tbbutton',
                 actions: [{
                         xtype: 'tbbutton',
-                        text: 'Herramientas',
-                        menu: {
+                        text: 'Busqueda',
+/*                        menu: {
                             items: [{
                                     text: 'Buffer',
                                     iconCls: 'bt-buffer',
@@ -200,7 +234,8 @@ Ext.onReady(function() {
                                 {
                                     text: 'Busquedas',
                                     iconCls: 'gxp-icon-find',
-                                    menu: {
+  */
+                                  menu: {
                                         items: [
                                             {
                                                 text: 'Por Partido-Partida',                                                
@@ -211,7 +246,7 @@ Ext.onReady(function() {
                                             {
                                                 text: 'Por Partido-Barrio',                                                
                                                 handler: function(item, event) {
-                                                    nomenclatura_par.mostrar();
+                                                    busqueda_barrio.mostrar();
                                                 }
                                             },
                                             {
@@ -223,17 +258,18 @@ Ext.onReady(function() {
                                             {
                                                 text: 'Por Folio Barrial',                                                
                                                 handler: function(item, event) {
-                                                    nomenclatura_par.mostrar();
+                                                    busqueda_folio.mostrar();
                                                 }
                                             },
                                         ]
                                     }
-                                }
+/*                                }
 
                             ]
 
                         }
-                    }]
+*/  
+                  }]
             }, 
 /*,
             {
@@ -331,13 +367,18 @@ Ext.onReady(function() {
     });
 
 
+
+// NOMENCLATURA 
+
     nomenclatura = new Nomenclatura(this);
     nomenclatura_par = new Nomenclatura_par(this);
-    buffer = new Buffer(this);
     //Sesion = new Sesion(this); //Para Login
-    ficha = new Ficha(this);
+    //ficha = new Ficha(this);
     //distritos = new Distritos(this); //Para crear un vector de los partidos
 
+// BUSQUEDAS
+	busqueda_barrio = new Busqueda_Barrio(this);
+	
     //add highlight of identified object to map, called from feature-info render-event, configured in userconfig.ashx (from database))
     function addHighlight(feature) {
         //add feature to map
