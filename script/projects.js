@@ -17,6 +17,7 @@ function get_project(){
  if ( (params.p)){
 	console.log(params.p);
 	return params.p;
-}
-
+ }else{
+	return 'demo';
+ }
 }
