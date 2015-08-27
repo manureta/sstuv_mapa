@@ -11,6 +11,13 @@ var layers = [
 // SSTUV
 	{
 		source:"proyectosgis",
+		name: "geonode:prosede", 
+		visibility: false,
+		selected: true,
+		group: "local"
+   	},
+	{
+		source:"proyectosgis",
 		name: "geonode:registro_organizaciones", 
 		visibility: false,
 		selected: true,
@@ -32,7 +39,7 @@ var layers = [
    	},	
 	{
 		source:"proyectosgis",
-		name: "geonode:familia_propietaria", 
+		name: "geonode:familiapropietaria", 
 		visibility: false,
 		selected: true,
 		group: "local"
