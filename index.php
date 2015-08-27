@@ -120,7 +120,7 @@
     <div id="busqueda_folio" class="x-hidden">
         <div>
             <label>Folio:</label>
-            <input id="cod_folioN" type="text" tipo="numero" largo="10"/>
+            <input id="folioN" type="text" tipo="numero" largo="10"/>
             <button>Buscar</button>
         </div>
      </div>
