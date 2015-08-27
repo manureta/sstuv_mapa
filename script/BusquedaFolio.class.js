@@ -3,7 +3,7 @@ var macizos = "macizos", parcelas = "parcelas";
 //var folio="nombre_oficial", partido="partido";
 var workspace = ""; //"cartografiabase";
 
-var Busqueda_Barrio = new Class({
+var Busqueda_Folio = new Class({
     Implements: Events,
     win: false,
     dom: false,
@@ -14,7 +14,7 @@ var Busqueda_Barrio = new Class({
         this.clickEnMapa();
         this.dom.getElement('button').addEvent('click', this.consultar.bind(this));
         window.callbackBusqueda_Barrio = this.procesarRespuesta.bind(this);
-        this.capa = new OpenLayers.Layer.Vector("Consulta Barrio", {
+        this.capa = new OpenLayers.Layer.Vector("Consulta Folio", {
             group: "default"
         });
     },
@@ -22,7 +22,7 @@ var Busqueda_Barrio = new Class({
         var self = this;
         if (!this.win) {
             this.win = new Ext.Window({
-                title: 'Busqueda por Barrio',
+                title: 'Busqueda por Folio',
                 width: 190,
                 //height: 160,
                 closeAction: 'hide',
