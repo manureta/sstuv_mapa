@@ -1,7 +1,7 @@
-var server = "http://190.188.234.6/";
+var server = "http://190.188.234.6";
 var macizos = "macizos", parcelas = "parcelas";
 //var folio="nombre_oficial", partido="partido";
-var workspace = ""; //"cartografiabase";
+var workspace = "registro"; //"cartografiabase";
 
 var Busqueda_Folio = new Class({
     Implements: Events,
@@ -13,7 +13,7 @@ var Busqueda_Folio = new Class({
         this.dom = $('busqueda_folio');
         this.clickEnMapa();
         this.dom.getElement('button').addEvent('click', this.consultar.bind(this));
-        window.callbackBusqueda_Barrio = this.procesarRespuesta.bind(this);
+        window.callbackBusqueda_Folio = this.procesarRespuesta.bind(this);
         this.capa = new OpenLayers.Layer.Vector("Consulta Folio", {
             group: "default"
         });
@@ -152,17 +152,15 @@ var Busqueda_Folio = new Class({
     },
     consultar: function() {
         var busqueda_folio = {
-            partido: this.gTex(['#partidoN']),
             folio: this.gTex(['#folioN'])
 
         };
         var self = this;
-        var capa, partido, folio, filtro;
+        var capa, folio, filtro;
 
         if (busqueda_folio.folio.seteado) {//Tiene folio?
 
                 capa = "caratulas";
-                this.partido = busqueda_folio.partido.valor;
                 this.folio = busqueda_folio.folio.valor;
                 filtro = '<PropertyIsEqualTo> <PropertyName>cod_folio</PropertyName> <Literal>' + this.folio + '</Literal> </PropertyIsEqualTo>';
         } else {
@@ -188,7 +186,7 @@ var Busqueda_Folio = new Class({
                 maxFeatures: '100',
                 srsName: app.mapPanel.map.getProjection(),
                 outputFormat: 'text/javascript',
-                format_options: 'callback:callbackBusqueda_Barrio',
+                format_options: 'callback:callbackBusqueda_Folio',
             	filter: filtro
 	    },
         }).send();

@@ -1,7 +1,6 @@
-var server = "http://190.188.234.6/";
-var macizos = "macizos", parcelas = "parcelas";
+var server = "http://190.188.234.6"; var macizos = "macizos", parcelas = "parcelas";
 //var barrio="nombre_oficial", partido="partido";
-var workspace = ""; //"cartografiabase";
+var workspace = "registro"; //"cartografiabase";
 
 var Busqueda_Barrio = new Class({
     Implements: Events,
@@ -117,7 +116,7 @@ var Busqueda_Barrio = new Class({
         //		palabra = "0"+palabra;
         //palabra = palabra;
         //	}
-        return palabra.toUpperCase();
+        return palabra; //.toUpperCase();
     },
     _gTex: function(id) {
         var dom = this.dom.getElement(id);
@@ -165,12 +164,12 @@ var Busqueda_Barrio = new Class({
                 capa = "caratulas";
                 this.partido = busqueda_barrio.partido.valor;
                 this.barrio = busqueda_barrio.barrio.valor;
-                filtro = '<And><PropertyIsLike> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsLike><PropertyIsLike> <PropertyName>nombre_oficial</PropertyName> <Literal>' + this.barrio + '</Literal> </PropertyIsLike></And>';
+                filtro = '<And><PropertyIsLike  wildCard="*" singleChar="." escapeChar="!"> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsLike><PropertyIsLike  wildCard="*" singleChar="." escapeChar="!"> <PropertyName>nombre_oficial</PropertyName> <Literal>' + this.barrio + '</Literal> </PropertyIsLike></And>';
 
             } else {
                 capa = "caratulas";
                 this.partido = busqueda_barrio.partido.valor;
-                filtro = '<PropertyIsLike> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsLike>';
+                filtro = '<PropertyIsLike wildCard="*" singleChar="#" escapeChar="!"> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsLike>';
             }
         } else {
             Ext.MessageBox.alert('Error', 'Debe definir almenos el partido.');
@@ -184,7 +183,7 @@ var Busqueda_Barrio = new Class({
             timeout: 70000,
             onTimeout: function() {
                 console.log('onTimeout', arguments);
-                //Ext.MessageBox.alert('Error', 'No se pudo encontrar un resultado, los datos son erroneos.');
+                Ext.MessageBox.alert('Error', 'Agotado el tiempo de espera del servicio.');
                 self.win.enable();
             },
             data: {
