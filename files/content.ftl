@@ -23,8 +23,12 @@ will be called multiple times if there are various feature collections
     <td>${attribute.value}</td>
   </tr>
  </#if>
-
 </#list>
+<tr>
+        <td><a href='/registro/caratula.php?idfolio=${feature.attributes.id.value}'>Descargar</a></td>
+        <td><a href='/registro/caratula.php?idfolio=${feature.attributes.id.value}&foliocompleto'>Descargar (usuarios registrados)</a></td>
+  </tr>
+
 </#list>
 </table>
 </div>
