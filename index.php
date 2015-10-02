@@ -39,6 +39,7 @@
         <script type="text/javascript" src="./script/BusquedaFolio.class.js"></script>
         <script type="text/javascript" src="./script/posicionamiento.class.js"></script>
         <script type="text/javascript" src="./script/dist.js"></script>         
+        <script type="text/javascript" src="./script/Sesion.class.js"></script>         
 	<script type="text/javascript" src="./script/streetView.class.js"></script>
 
 	<script type="text/javascript" src="./script/projects.js"></script>

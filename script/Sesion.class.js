@@ -1,18 +1,19 @@
 var Sesion = new Class({
 	initialize: function(){
 		var self = this;
+		var server='http://190.188.234.6';
 		var jsonRequest = new Request.JSON({
-    		url: './services/sesion.php', 
+    		url: server+'/account/check_session', 
     		onSuccess: function(response){
 				if(response){
 					$('sesion').set('text','Salir');
 					$('sesion').addEvent('click',function(){
 						var jsonRequest = new Request.JSON({
-				    		url: './services/sesion.php', 
+				    		url: server+'/account/ajax_login ', 
 				    		onSuccess: function(response){
 								window.location.reload();
 							}
-						}).get({
+						}).post({
 							'o': 'logout'
 						});
 					});
@@ -22,7 +23,7 @@ var Sesion = new Class({
 				}
 			}
 		}).get({
-			'o': 'status'
+		//	'o': 'status'
 		});
 	},
 	mostrar: function(){
@@ -75,7 +76,7 @@ var Sesion = new Class({
 		            handler: function(){
 		            	self.win.disable();
 		            	var jsonRequest = new Request.JSON({
-		            		url: './services/sesion.php', 
+		            		url: server+'/account/ajax_login', 
 		            		onSuccess: function(response){
 								self.win.enable();
 								if(response){
@@ -88,11 +89,11 @@ var Sesion = new Class({
 							           icon: Ext.MessageBox.ERROR
 							       });
 								}
-							}
-						}).get({
-							'usuario': self.form.getForm().findField('usuario').getValue(), 
-							'contrasena': self.form.getForm().findField('contrasena').getValue(),
-							'o': 'login'
+							},
+						data:{"username":"uuuuuu","password":"xxxxx"}
+						}).post({
+							'username': self.form.getForm().findField('usuario').getValue(), 
+							'password': self.form.getForm().findField('contrasena').getValue(),
 						});
 		            }
 		        }],

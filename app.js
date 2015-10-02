@@ -5,8 +5,6 @@ OpenLayers.ProxyHost = "./prox/?url=";
 
 
 
-Ext.onReady(function() {
-
 
 //GEOEXT!!!!
 /*
@@ -17,12 +15,11 @@ new  Ext.data.Store( {
          {"abbr":"DEMO", "nombre":"Demostracion de proyectos"},
          {"abbr":"IDEHAB", "nombre":"Inf. de Datos Espaciales de Habitat"},
          {"abbr":"SSTUV", "nombre":"Subse Tierra, Urbanismo y Viviendas"}]
-         //...
-     ,
-	autoLoad: true
  });
+
 */
 
+Ext.onReady(function() {
     GeoExt.Lang.set("es");
     app = new gxp.Viewer({
         proxy: "./prox/?url=",
@@ -90,8 +87,7 @@ xtype: "combo",
      displayField: 'nombre',
      valueField: 'abbr'
 				
-					},
-                                {
+					},{
                                     layout: "accordion",
 				    multi: true,
 		 		    flex: 1,
@@ -263,15 +259,9 @@ xtype: "combo",
                                             },
                                         ]
                                     }
-/*                                }
-
-                            ]
-
-                        }
-*/  
                   }]
             }, 
-/*,
+
             {
                 xtype: "tbbutton",
                 actionTarget: "map.tbar",
@@ -282,8 +272,9 @@ xtype: "combo",
                             Sesion.mostrar();
                         }
                     }]
-            }*/
+            },
 	{
+            xtype:'tbbutton',
             xtype:'tbbutton',
             actionTarget: "map.tbar",
               actions: [{
@@ -372,7 +363,7 @@ xtype: "combo",
 
     nomenclatura = new Nomenclatura(this);
     nomenclatura_par = new Nomenclatura_par(this);
-    //Sesion = new Sesion(this); //Para Login
+    Sesion = new Sesion(this); //Para Login
     //ficha = new Ficha(this);
     //distritos = new Distritos(this); //Para crear un vector de los partidos
 
