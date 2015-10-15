@@ -263,10 +263,13 @@ xtype: "combo",
             }, 
 
             {
-                xtype: "tbbutton",
+                
+		id:"btnSesion",
+		xtype: "tbbutton",
                 actionTarget: "map.tbar",
                 actions: [{
                         text: 'Inicio sesión',
+			id: "sesion",
                         iconCls: 'bt-users',
                         handler: function() {
                             Sesion.mostrar();

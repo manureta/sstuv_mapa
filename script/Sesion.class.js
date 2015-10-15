@@ -5,26 +5,34 @@ var Sesion = new Class({
 		var jsonRequest = new Request.JSON({
     		url: server+'/account/check_session', 
     		onSuccess: function(response){
-				if(response){
-					$('sesion').set('text','Salir');
+				if(response.active){
+					Ext.getCmp("sesion").setText("Salir");
+					Ext.getCmp("sesion").setHandler(function(){alert("saliendo")});
+					//$("sesion").set("text","Salir");
+					/*
 					$('sesion').addEvent('click',function(){
+					alert("chau");  					
 						var jsonRequest = new Request.JSON({
-				    		url: server+'/account/ajax_login ', 
+				    		url: server+'/account/logout ', 
 				    		onSuccess: function(response){
-								window.location.reload();
+								//window.location.reload();
 							}
 						}).post({
 							'o': 'logout'
 						});
+					  	
 					});
-				}else{
-					$('sesion').set('text','Ingresar');
-					$('sesion').addEvent('click',self.mostrar.bind(this));
+					*/
 				}
 			}
 		}).get({
 		//	'o': 'status'
 		});
+	},
+	chequear: function(){
+
+		
+
 	},
 	mostrar: function(){
 		var self = this;
@@ -79,7 +87,7 @@ var Sesion = new Class({
 		            		url: server+'/account/ajax_login', 
 		            		onSuccess: function(response){
 								self.win.enable();
-								if(response){
+								if(response.ok){
 									window.location.reload();
 								}else{
 									Ext.MessageBox.show({

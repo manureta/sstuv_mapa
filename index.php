@@ -16,7 +16,7 @@
         <script type="text/javascript" src="./script/ext-3.4.0/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="./script/ext-3.4.0/ext-all.js"></script>
         <script type="text/javascript" src="./script/ext-3.4.0/examples/ux/ProgressBarPager.js"></script>
-        <script type="text/javascript" src="./script/OpenLayers.debug.js"></script>
+        <script type="text/javascript" src="./script/OpenLayers.js"></script>
         <script type="text/javascript" src="./script/GeoExt.js"></script>
         <script type="text/javascript" src="./script/GeoExt.ux/Ext.ux.SearchField.js"></script>
         <script type="text/javascript" src="./script/GeoExt.ux/ProgressBarPager.js"></script>
@@ -68,7 +68,6 @@
 <body>
     <div id="header" class="x-hidden">
         <h1>Depto SIG</h1>
-        <button id="sesion">Cargando...</button>
     </div>
     <div id="nomenclatura" class="x-hidden">
         <div>
