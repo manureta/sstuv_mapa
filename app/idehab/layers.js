@@ -43,14 +43,14 @@ var layers = [
 		visibility: false,
 		selected: true,
 		group: "local"
-   	},	
+   	},
 	{
 		source:"proyectosgis",
 		name: "geonode:conflictos", 
 		visibility: false,
 		selected: true,
 		group: "local"
-   	},
+   	},	
 	{
 		source:"proyectosgis",
 		name: "registro:caratulas", 
