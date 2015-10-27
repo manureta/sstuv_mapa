@@ -30,6 +30,7 @@ like td, tr, and so on.
                 background:#eee;
         }
         table.featureInfo caption{
+		background-image: url("/mapa_pruebas/app/img/subse-y-ide.png");
     		background-repeat: no-repeat;
                 text-align:left;
                 font-size:100%;
@@ -40,4 +41,3 @@ like td, tr, and so on.
         }
   </style>
   <body>
-
