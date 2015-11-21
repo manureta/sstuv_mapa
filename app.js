@@ -246,6 +246,7 @@ storeprojects = new Ext.data.ArrayStore({
                 actions: [{
                         xtype: 'tbbutton',
                         text: 'Busqueda',
+			iconCls: 'gxp-icon-find',
 /*                        menu: {
                             items: [{
                                     text: 'Buffer',
