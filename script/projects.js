@@ -21,3 +21,9 @@ function get_project(){
 	return 'demo';
  }
 }
+
+function set_project(strProj){
+
+  window.location.search="?p="+strProj;
+
+}

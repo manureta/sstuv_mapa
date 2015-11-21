@@ -12,14 +12,31 @@ var storeprojects=
 new  Ext.data.Store( {
      fields: ['abbr', 'nombre'],
      data :[ 
-         {"abbr":"DEMO", "nombre":"Demostracion de proyectos"},
-         {"abbr":"IDEHAB", "nombre":"Inf. de Datos Espaciales de Habitat"},
-         {"abbr":"SSTUV", "nombre":"Subse Tierra, Urbanismo y Viviendas"}]
+         {"abbr":"demo", "nombre":"Demostracion de proyectos"},
+         {"abbr":"idehab", "nombre":"Inf. de Datos Espaciales de Habitat"},
+         {"abbr":"sstuv", "nombre":"Subse Tierra, Urbanismo y Viviendas"}]
  });
-
 */
+var storeprojects;
 
 Ext.onReady(function() {
+
+storeprojects = new Ext.data.ArrayStore({
+    // store configs
+    autoDestroy: true,
+    storeId: 'myStore',
+    mode: 'local',
+    idIndex: 0,  
+    fields: [
+       'abbr','nombre'
+    ],
+    data: [
+	 ["demo","Demostracion de proyectos"],
+         ["idehab","Inf. de Datos Espaciales de Habitat"],
+         ["sstuv","Subse Tierra, Urbanismo y Viviendas"]
+	]	
+});
+
     GeoExt.Lang.set("es");
     app = new gxp.Viewer({
         proxy: "./prox/?url=",
@@ -77,17 +94,27 @@ Ext.onReady(function() {
                     },
                     items:
                             [
-{title: "Proyectos",
-emptyText: "Seleccione Proyecto...",
-id: "projects_combo",
-xtype: "combo",
-     fieldLabel: 'Seleccione el proyecto',
-     store:null, //storeprojects, 
-     queryMode: 'local',
-     displayField: 'nombre',
-     valueField: 'abbr'
-				
-					},{
+				{
+				title: "Proyectos",
+				emptyText: "Seleccione Proyecto...",
+				id: "projects_combo",
+				xtype: "combo",
+			        store:storeprojects, 
+			        displayField: 'nombre',
+			        valueField: 'abbr',
+			        typeAhead: true,
+			        mode: 'local',
+	                        forceSelection: true,
+			        triggerAction: 'all',
+			        emptyText:'Seleccione un proyecto...',
+			        selectOnFocus:true,
+				width:300,
+				listeners: {
+    					select: function(v) {
+						set_project(v.value);
+					 }
+ 			 	}
+			       },{
                                     layout: "accordion",
 				    multi: true,
 		 		    flex: 1,
