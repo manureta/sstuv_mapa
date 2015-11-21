@@ -7,22 +7,21 @@ var Sesion = new Class({
     		onSuccess: function(response){
 				if(response.active){
 					Ext.getCmp("sesion").setText("Salir");
-					Ext.getCmp("sesion").setHandler(function(){alert("saliendo")});
+					Ext.getCmp("sesion").setHandler(function(){
+						alert("saliendo");
 					//$("sesion").set("text","Salir");
-					/*
-					$('sesion').addEvent('click',function(){
-					alert("chau");  					
 						var jsonRequest = new Request.JSON({
-				    		url: server+'/account/logout ', 
+				    		url: server+'/account/ajax_logout', 
 				    		onSuccess: function(response){
 								//window.location.reload();
 							}
 						}).post({
 							'o': 'logout'
 						});
-					  	
 					});
-					*/
+					  	
+					//});
+					
 				}
 			}
 		}).get({
