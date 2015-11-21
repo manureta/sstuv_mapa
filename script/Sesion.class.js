@@ -8,12 +8,13 @@ var Sesion = new Class({
 				if(response.active){
 					Ext.getCmp("sesion").setText("Salir");
 					Ext.getCmp("sesion").setHandler(function(){
-						alert("saliendo");
+//						alert("saliendo");
+						Ext.getCmp("sesion").setText("Inicio Sesión");
 					//$("sesion").set("text","Salir");
 						var jsonRequest = new Request.JSON({
 				    		url: server+'/account/ajax_logout', 
 				    		onSuccess: function(response){
-								//window.location.reload();
+								alert('Ya salió');
 							}
 						}).post({
 							'o': 'logout'
