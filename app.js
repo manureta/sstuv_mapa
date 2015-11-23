@@ -32,8 +32,14 @@ storeprojects = new Ext.data.ArrayStore({
     ],
     data: [
 	 ["demo","Demostracion de proyectos"],
-         ["idehab","Inf. de Datos Espaciales de Habitat"],
-         ["sstuv","Subse Tierra, Urbanismo y Viviendas"]
+         ["idehab","Inf. de Datos Espaciales de Hábitat"],
+//         ["sstuv","Subse Tierra, Urbanismo y Viviendas"],
+	 ["deficit","Déficit Urbano Habitacional"],
+	 ["regularizacion","Regularización Urbana y Dominial"],
+	 ["acceso_habitat","Ley de Acceso Justo al Hábitat"],
+	 ["familia_propietaria","Familia Propietaria"],
+	 ["conflictos","Conflictos Habitacionales"],
+	 ["programa_deportivo","Programa Social Equip. Deportivo"]
 	]	
 });
 
