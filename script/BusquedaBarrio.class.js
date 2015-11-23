@@ -164,7 +164,7 @@ var Busqueda_Barrio = new Class({
                 capa = "caratulas";
                 this.partido = busqueda_barrio.partido.valor;
                 this.barrio = busqueda_barrio.barrio.valor;
-                filtro = '<And><PropertyIsLike  wildCard="*" singleChar="." escapeChar="!"> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsLike><PropertyIsLike  wildCard="*" singleChar="." escapeChar="!"> <PropertyName>nombre_oficial</PropertyName> <Literal>' + this.barrio + '</Literal> </PropertyIsLike></And>';
+                filtro = '<And><PropertyIsLike  wildCard="%" singleChar="." escapeChar="!"> <PropertyName>partido</PropertyName> <Literal>' + this.partido + '</Literal> </PropertyIsLike><PropertyIsLike  wildCard="%" singleChar="." escapeChar="!"> <PropertyName>nombre_oficial</PropertyName> <Literal>' + this.barrio + '</Literal> </PropertyIsLike></And>';
 
             } else {
                 capa = "caratulas";
