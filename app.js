@@ -74,12 +74,10 @@ storeprojects = new Ext.data.ArrayStore({
                             title: "Ayuda",
                             autoScroll: true,
                             html: "<iframe  width='100%' height='100%' src='./views/ayuda.html'>"
+                        }, {
+                            title: "Barrios SSTUV",
+                            html: "<iframe  width='100%' height='100%' src='/registro/folio/publico'>"
                         }
-/*, {
-                            title: "Otra solapa",
-                            html: "<iframe  width='100%' height='100%' src='./views/vacio.html'>"
-                        }
-*/
                     ]
                 },
                 {
