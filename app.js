@@ -17,10 +17,10 @@ new  Ext.data.Store( {
          {"abbr":"sstuv", "nombre":"Subse Tierra, Urbanismo y Viviendas"}]
  });
 */
-var storeprojects;
+var storeprojects,ambiente;
 
 Ext.onReady(function() {
-
+if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {ambiente=''; } ;
 storeprojects = new Ext.data.ArrayStore({
     // store configs
     autoDestroy: true,
@@ -65,6 +65,9 @@ storeprojects = new Ext.data.ArrayStore({
                     activeTab: 0,
                     items: ["mymap",
                         {
+                            title: "Barrios SSTUV",
+                            html: "<iframe  width='100%' height='100%' src='/registro"+ambiente+"/folio/publico'>"
+                        }, {
                             title: "Acerca de IDEHab",
                             html: "<iframe  width='100%' height='100%' src='./views/acercadeidehab.html'>"
                         }, {
@@ -74,9 +77,6 @@ storeprojects = new Ext.data.ArrayStore({
                             title: "Ayuda",
                             autoScroll: true,
                             html: "<iframe  width='100%' height='100%' src='./views/ayuda.html'>"
-                        }, {
-                            title: "Barrios SSTUV",
-                            html: "<iframe  width='100%' height='100%' src='/registro/folio/publico'>"
                         }
                     ]
                 },
