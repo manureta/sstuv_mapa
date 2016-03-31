@@ -4,44 +4,11 @@ var permalink;
 OpenLayers.ProxyHost = "./prox/?url=";
 
 
-
-
-//GEOEXT!!!!
-/*
-var storeprojects= 
-new  Ext.data.Store( {
-     fields: ['abbr', 'nombre'],
-     data :[ 
-         {"abbr":"demo", "nombre":"Demostracion de proyectos"},
-         {"abbr":"idehab", "nombre":"Inf. de Datos Espaciales de Habitat"},
-         {"abbr":"sstuv", "nombre":"Subse Tierra, Urbanismo y Viviendas"}]
- });
-*/
 var storeprojects,ambiente;
 
 Ext.onReady(function() {
 if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {ambiente=''; } ;
-storeprojects = new Ext.data.ArrayStore({
-    // store configs
-    autoDestroy: true,
-    storeId: 'myStore',
-    mode: 'local',
-    idIndex: 0,  
-    fields: [
-       'abbr','nombre'
-    ],
-    data: [
-	 ["demo","Demostracion de proyectos"],
-         ["idehab","Inf. de Datos Espaciales de Hábitat"],
-//         ["sstuv","Subse Tierra, Urbanismo y Viviendas"],
-	 ["deficit","Déficit Urbano Habitacional"],
-	 ["regularizacion","Regularización Urbana y Dominial"],
-	 ["acceso_habitat","Ley de Acceso Justo al Hábitat"],
-	 ["familia_propietaria","Familia Propietaria"],
-	 ["conflictos","Conflictos Habitacionales"],
-	 ["programa_deportivo","Programa Social Equip. Deportivo"]
-	]	
-});
+
 
     GeoExt.Lang.set("es");
     app = new gxp.Viewer({
@@ -55,7 +22,7 @@ storeprojects = new Ext.data.ArrayStore({
                     region: "north",
                     border: false,
                     height: 40,
-                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#F58030" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;"> <img title="Provincia de Buenos Aires | Gob. Daniel Scioli" src="./app/img/ba.blanco.png" alt="Buenos Aires | Gob. Daniel Scioli"> </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: center;"> <img title="Ministerio de Infraestructura" src="./app/img/ministerio-subse.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
+                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="grey" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;">  </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: center;"> <img title="Ministerio de Infraestructura" src="./app/img/ministerio-subse.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
                 },
                 {
                     id: "centerpanel",
@@ -99,26 +66,6 @@ storeprojects = new Ext.data.ArrayStore({
                     items:
                             [
 				{
-				title: "Proyectos",
-				emptyText: "Seleccione Proyecto...",
-				id: "projects_combo",
-				xtype: "combo",
-			        store:storeprojects, 
-			        displayField: 'nombre',
-			        valueField: 'abbr',
-			        typeAhead: true,
-			        mode: 'local',
-	                        forceSelection: true,
-			        triggerAction: 'all',
-			        emptyText:'Seleccione un proyecto...',
-			        selectOnFocus:true,
-				width:300,
-				listeners: {
-    					select: function(v) {
-						set_project(v.value);
-					 }
- 			 	}
-			       },{
                                     layout: "accordion",
 				    multi: true,
 		 		    flex: 1,
@@ -231,7 +178,7 @@ storeprojects = new Ext.data.ArrayStore({
                     emptyText: "Ingrese el Partido o la Localidad ...",
                     width: 300
                 }
-            }, { 
+            }, /*{ 
                 xtype: "tbbutton",
                 actionTarget: "map.tbar",
                 actions: [{
@@ -242,7 +189,15 @@ storeprojects = new Ext.data.ArrayStore({
                          showPrintWindow();
                     }
                 }]
-            },
+            },*/
+	    {
+		   ptype: "gxp_print",
+		   customParams: {outputFilename: 'SSTUV-MAPA'},
+		   printService: "/geoserver/pdf/",
+		   actionTarget: "map.tbar",
+		   showButtonText: true
+	   },
+
 
 // MENU DE BUSQUEDAS
             {

@@ -8,6 +8,154 @@ var layers = [
         type: "OpenLayers.Layer.Vector",
         group: "consulta"
     },
+
+// ARBA
+    {
+        source: "arba",
+        name: "Grupo ARBA",
+        visibility: false,
+        title: "Catastro",
+        group: "ideba"
+    },    
+    {
+        source: "geodesia",
+        name: "ParcelarioCompleto",
+        visibility: false,
+        title: "Parcelario Geodesia",
+        group: "ideba"
+    },
+
+// IDERA
+	{
+		source:"ign",
+	        name: "ideign:CURSOS_DE_AGUA",
+		visibility: false,
+		title: "Cursos de Agua",
+		group: "idera"
+   	}, 
+	{
+		source:"ign",
+		name: "ideign:CUERPOS_DE_AGUA",
+		visibility: false,
+		title: "Cuerpo de Agua",
+		group: "idera"
+   	}, 
+	{
+		source:"ign",
+		name: "capabaseargenmap",
+		visibility: false,
+		title: "Capa Base IGN",
+		group: "idera"
+   	},
+        {
+                source: "arbalocal",
+                name: "partidos",
+                visibility: true,
+                title: "LÁ­mite de Partidos",
+                visibility: false,
+                group: "ideba"
+        },
+        {
+	source:"proyectosgis",
+	title: "Limite Partido",
+	name: "geonode:partidos_pba_2014_cod_catastro", 
+	visibility: false,
+	group: "ideba",
+	styles: "partidos_pba_2014_cod_catastro_6be100d9" 
+        },
+
+// Deficit urbano - habitacional
+       {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Sin cobertura de agua de red (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_8d5de8b6"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Sin cobertura de red cloacal (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_024a9fd6"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Sin cobertura de gas de red (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_76ba8e40"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Conexion insuficiente a servicios basicos (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_c88f2bf2"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Calidad constructiva insuficiente (% viv)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_f4399157"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "NBI (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_37461de4"   
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Estructura etaria (- 14/+ 65)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_9f1d95f9"   
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Inquilinos (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_5640a48a"   
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Tenencia irregular (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_65e71b9c"   
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:censo_2010_dic15",
+                title: "Hacinamiento critico (% hog)",
+		visibility: false,
+		selected: true,
+		group: "deficit",
+                styles: "censo_2010_dic15_dcc60444"   
+   	},
+
 // SSTUV
 	{
 		source:"proyectosgis",
@@ -19,6 +167,7 @@ var layers = [
 	{
 		source:"proyectosgis",
 		name: "geonode:lote_con_servicios", 
+                title: "Lotes con servicios",
 		visibility: false,
 		selected: true,
 		group: "local"
@@ -50,7 +199,44 @@ var layers = [
 		visibility: false,
 		selected: true,
 		group: "local"
-   	},	
+        },
+
+        {
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Barrios que iniciaron un proceso de regularizacion",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_2d9c8ec4"
+   	},
+	{
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Barrios con intervencion habitacional",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_0f6bad4c"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Periodo de origen",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_7a7b89a2"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Densidad (Hog/Ha)",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_6eff4bd7"
+   	},
 	{
 		source:"proyectosgis",
 		name: "registro:caratulas", 
@@ -62,7 +248,7 @@ var layers = [
 	{
 		source:"sstuv",
 		name: "villas_y_asentamientos_confirmados_rppvap", 
-		title: "Villas y Asentamientos (Confirmados)",
+		title: "Villas y Asentamientos",
 		visibility: true,
 		group: "local"
    	},	
@@ -71,17 +257,12 @@ var layers = [
 		name: "geonode:rppvap_avance", 
 		title: "RPPVAP Avance Provincial",
 		visibility: false,
-		group: "local"
+		group: "registro"
    	},
-	{
-		source:"proyectosgis",
-		title: "Limite Partido",
-		name: "geonode:partidos_pba_2014_cod_catastro", 
-		visibility: false,
-		group: "local",
-		styles: "partidos_pba_2014_cod_catastro_6be100d9" 
-   	},
+	
+      
 
+ 	
 
 // de UrbaSIG
 	{
@@ -111,24 +292,11 @@ var layers = [
 	{
 		source:"urbasig",
 		name: "municipalidades",
+                title:"Municipalidades",
 		visibility: false,
 		group: "ideba"
    	}, 
-    // ARBA
-    {
-        source: "arba",
-        name: "Grupo ARBA",
-        visibility: false,
-        title: "Catastro",
-        group: "ideba"
-    },    
-    {
-        source: "geodesia",
-        name: "ParcelarioCompleto",
-        visibility: false,
-        title: "Parcelario Geodesia",
-        group: "ideba"
-    },   
+       
    // SALUD
     {
         source: "salud",
@@ -138,30 +306,10 @@ var layers = [
         group: "ideba"
     },   
 
-   // IDERA
-	{
-		source:"ign",
-			name: "ideign:CURSOS_DE_AGUA",
-		visibility: false,
-		title: "Cursos de Agua",
-		group: "idera"
-   	}, 
-	{
-		source:"ign",
-		name: "ideign:CUERPOS_DE_AGUA",
-		visibility: false,
-		title: "Cuerpo de Agua",
-		group: "idera"
-   	}, 
-	{
-		source:"ign",
-		name: "capabaseargenmap",
-		visibility: false,
-		title: "Capa Base IGN",
-		group: "idera"
-   	}, 
+   
  
-    // Capas de la DPUyT
+    
+   // Capas de la DPUyT
     {
      source: "cartolocal",
      name: "divisionpolitica",
@@ -171,14 +319,8 @@ var layers = [
     },
  
     // Capas Base
-    {
-        source: "arbalocal",
-        name: "partidos",
-        visibility: true,
-        title: "LÃ­mite de Partidos",
-     visibility: false,
-        group: "ideba"
-    },
+   
+   
     {
         source: "bing",
         name: "Road",

@@ -12,6 +12,7 @@
         <link rel="stylesheet" type="text/css" href="./theme/vialidad.css"/>
         <link rel="stylesheet" type="text/css" href="./theme/educacion.css"/>        
         <link rel="stylesheet" type="text/css" href="./theme/viewer.css"/>
+	<link rel="stylesheet" type="text/css" href="./script/GeoExt.ux/printpreview.css"></script>
 
         <script type="text/javascript" src="./script/ext-3.4.0/adapter/ext/ext-base.js"></script>
         <script type="text/javascript" src="./script/ext-3.4.0/ext-all.js"></script>
