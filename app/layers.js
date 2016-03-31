@@ -11,13 +11,6 @@ var layers = [
 // SSTUV
 	{
 		source:"proyectosgis",
-		name: "geonode:prosede", 
-		visibility: false,
-		selected: true,
-		group: "local"
-   	},
-	{
-		source:"proyectosgis",
 		name: "geonode:registro_organizaciones", 
 		visibility: false,
 		selected: true,
@@ -39,7 +32,7 @@ var layers = [
    	},	
 	{
 		source:"proyectosgis",
-		name: "geonode:familiapropietaria", 
+		name: "geonode:familia_propietaria", 
 		visibility: false,
 		selected: true,
 		group: "local"
@@ -50,13 +43,49 @@ var layers = [
 		visibility: false,
 		selected: true,
 		group: "local"
-   	},	
+   	},
 	{
 		source:"proyectosgis",
 		name: "geonode:conflictos", 
 		visibility: false,
 		selected: true,
 		group: "local"
+        },
+        {
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Barrios que iniciaron un proceso de regularizacion",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_2d9c8ec4"
+   	},
+	{
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Barrios con intervencion habitacional",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_0f6bad4c"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Periodo de origen",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_7a7b89a2"
+   	},
+        {
+		source:"proyectosgis",
+                name: "geonode:rppvap_base_2",
+                title: "Densidad (Hog/Ha)",
+		visibility: false,
+		selected: true,
+		group: "local",
+                styles: "rppvap_base_2_6eff4bd7"
    	},
 	{
 		source:"proyectosgis",

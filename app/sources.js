@@ -5,7 +5,7 @@ var sources = {
         title: "SSTUV",
         ptype: "gxp_wmssource"
     },
-
+    
     urbasig: {
         url: "http://sig.gobierno.gba.gov.ar:8080/geoserver/urbasig/wms?",
         title: "Buenos Aires - URBASIG",
