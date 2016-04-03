@@ -22,11 +22,11 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
                     region: "north",
                     border: false,
                     height: 40,
-                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="grey" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;">  </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px; vertical-align: center;"><img src="./app/img/ministerio_prov.png"></td></tr> </table>  </div>'}]
+                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="grey" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;"><img src="./app/img/subse-blanco.png">  </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px; vertical-align: center; color:white; font-size:11px;">MINISTERIO DE INFRAESTRUCTURA Y SERVICIOS PÚBLICOS<br>BUENOS AIRES PROVINCIA</td></tr> </table>  </div>'}]
                 },
                 {
                     id: "centerpanel",
-                    xtype: "tabpanel",                    
+                    xtype: "tabpanel",
                     region: "center",
                     border: false,
                     activeTab: 0,
@@ -92,7 +92,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
 					    pack: 'end',
 					    multi: true,
 						height: 60
-					   
+
                                         }]
                                 }]
                 }]
@@ -149,7 +149,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
             {
                 ptype: "gxp_wmsgetfeatureinfo",
                 outputConfig: {
-                    width: 400,                    
+                    width: 400,
                     draggable: true
                 },
                 actionTarget: "map.tbar",
@@ -178,7 +178,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
                     emptyText: "Ingrese el Partido o la Localidad ...",
                     width: 300
                 }
-            }, /*{ 
+            }, /*{
                 xtype: "tbbutton",
                 actionTarget: "map.tbar",
                 actions: [{
@@ -221,25 +221,25 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
                                   menu: {
                                         items: [
                                             {
-                                                text: 'Por Partido-Partida',                                                
+                                                text: 'Por Partido-Partida',
                                                 handler: function(item, event) {
                                                     nomenclatura_par.mostrar();
                                                 }
                                             },
                                             {
-                                                text: 'Por Partido-Barrio',                                                
+                                                text: 'Por Partido-Barrio',
                                                 handler: function(item, event) {
                                                     busqueda_barrio.mostrar();
                                                 }
                                             },
                                             {
-                                                text: 'Por Nomenclatura',                                                
+                                                text: 'Por Nomenclatura',
                                                 handler: function() {
                                                     nomenclatura.mostrar();
                                                 }
                                             },
                                             {
-                                                text: 'Por Folio Barrial',                                                
+                                                text: 'Por Folio Barrial',
                                                 handler: function(item, event) {
                                                     busqueda_folio.mostrar();
                                                 }
@@ -247,10 +247,10 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
                                         ]
                                     }
                   }]
-            }, 
+            },
 
             {
-                
+
 		id:"btnSesion",
 		xtype: "tbbutton",
                 actionTarget: "map.tbar",
@@ -271,7 +271,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
                 text: 'Street View',
                 iconCls: "gxp-streetview",
                 handler: function() {
-                   streetView().show(); 
+                   streetView().show();
                 }
             }]
         },{
@@ -298,22 +298,22 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
         }
 
         ],
-        
+
         // layer sources
         defaultSourceType: "gxp_wmssource",
         sources: sources,
-        
+
         // map and layers
         map: {
             id: "mymap",
             title: "Mapa",
-            projection: "EPSG:900913",                        
+            projection: "EPSG:900913",
             displayProjection: "EPSG:4326",
-            units: "m",            
+            units: "m",
             restrictedExtent: [-7175626.9266567,-5102437.4580823,-6304445.4046767,-3769658.7339758],
             center: [-6768040.2, -4401345.9],
             zoom: 6,
-            numZoomLevels: 21,            
+            numZoomLevels: 21,
             stateId: "map",
             prettyStateKeys: true,
             eventListeners: {
@@ -349,7 +349,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
 
 
 
-// NOMENCLATURA 
+// NOMENCLATURA
 
     nomenclatura = new Nomenclatura(this);
     nomenclatura_par = new Nomenclatura_par(this);
@@ -360,7 +360,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
 // BUSQUEDAS
 	busqueda_barrio = new Busqueda_Barrio(this);
 	busqueda_folio = new Busqueda_Folio(this);
-	
+
     //add highlight of identified object to map, called from feature-info render-event, configured in userconfig.ashx (from database))
     function addHighlight(feature) {
         //add feature to map
@@ -386,7 +386,7 @@ function showPrintWindow() {
         modal: true,
         border: false,
         resizable: false,
-        width: 550,        
+        width: 550,
         autoHeight: true,
         items: new GeoExt.ux.PrintPreview({
             autoHeight: false,
@@ -400,7 +400,7 @@ function showPrintWindow() {
                         zoomWheelEnabled: false
                     }),
                     new OpenLayers.Control.PanPanel()
-                ]}                
+                ]}
             },
             printProvider: {
                 // using get for remote service access without same origin
@@ -412,7 +412,7 @@ function showPrintWindow() {
                 listeners: {
                     "print": function() {printWindow.close();}
                 }
-            },                        
+            },
             mapTitle: "Imprimir Mapa",
             sourceMap: app.mapPanel.map
         })
