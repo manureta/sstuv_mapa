@@ -239,9 +239,9 @@ var layers = [
    	},
 	{
 		source:"proyectosgis",
-		name: "registro:caratulas", 
+		name: "publico:mapeo_preliminar", 
 		title: "Villas y Asentamientos (Mapeo Preliminar)",
-		visibility: true,
+		visibility: false,
 		group: "local",
 		styles: "caratulas_48078e41" 
    	},

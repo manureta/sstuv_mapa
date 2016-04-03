@@ -22,7 +22,7 @@ if (window.location.href.search('mapa_pruebas')>0) {ambiente='_pruebas';} else {
                     region: "north",
                     border: false,
                     height: 40,
-                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="grey" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;">  </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px;  vertical-align: center;"> <img title="Ministerio de Infraestructura" src="./app/img/ministerio-subse.png" alt="Ministerio de Infraestructura"> </td></tr> </table>  </div>'}]
+                    items: [{html: '<div> <table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="grey" height="40px">  <tr> <td width="35%" style="padding-left: 10px; vertical-align: center;">  </td><td align="center" width="30%"  style="vertical-align: center;"> <img title="IDEHab" src="./app/'+get_project()+'/img/idehab-positivo-blanco.png" alt="IDE Habitacional"> </td> <td align="right" width="35%" style="padding-right:10px; vertical-align: center;"><img src="./app/img/ministerio_prov.png"></td></tr> </table>  </div>'}]
                 },
                 {
                     id: "centerpanel",
