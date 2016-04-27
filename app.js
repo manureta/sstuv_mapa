@@ -3,6 +3,11 @@ var permalink;
 
 OpenLayers.ProxyHost = "./prox/?url=";
 
+function folio_zoom_to(x,y){
+  app.mapPanel.map.setCenter(new OpenLayers.LonLat(x,y), 16);
+  Ext.getCmp("centerpanel").setActiveTab(0);	
+  return true;
+}
 
 var storeprojects,ambiente;
 
